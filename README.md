@@ -6,14 +6,19 @@ memory characteristics.
 
 # Instructions
 
-Clone this folder into your local machine. Make sure you have
+Clone this folder into your local machine. Make sure you have Python 3
 installed, either through your Operating System's package manager, or
-through the [Python Website](https://www.python.org/downloads/).
+through the [python website](https://www.python.org/downloads/).
 
 One of the core functionalities of KA Lite is fetching and downloading
 videos. The `download_videos_and_images.py` simulates part of that
 functionality by reading through the items in `contents.json` and
 extracting the download urls for each item in there.
+
+You can run the script through your terminal:
+```bash
+python3 download_videos_and_images.py
+```
 
 Your task is to determine the memory and CPU performance
 characteristics of the given script. Specifically, you have to answer
