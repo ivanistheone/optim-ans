@@ -25,9 +25,9 @@ characteristics of the given script. Specifically, you have to answer
 the following questions:
 
 
-1. What is the average runtime of the script? (The [timeit module](https://docs.python.org/3.3/library/timeit.html) may be of help)
+1. What is the average runtime of the script?
 1. What is the highest memory usage of the program?
-1. Which data type occupies the most memory? (The modules detailed [in this blog post](http://chase-seibert.github.io/blog/2013/08/03/diagnosing-memory-leaks-python.html) will be helpful)
+1. Which data type occupies the most memory?
 1. Which parts can we optimize to reduce memory usage and runtime?
    Suggest at least 3 ways we can optimize this script.
 
