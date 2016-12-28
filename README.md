@@ -42,6 +42,6 @@ the first text file containing the answers to each question, along
 with an explanation and output of the profiling tool of your
 choice. If you chose to rewrite the script to be more performant, you
 can add that as the second file. Send the github gist link to the
-person who sent this repo link to you.
+person who sent this repo link to you, and to the Greenhouse link (if included).
 
 That's it! Good luck and happy debugging!
