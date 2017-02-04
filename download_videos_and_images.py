@@ -8,12 +8,11 @@ import logging
 import json
 import tempfile
 import urllib.request
-from contextlib import closing
 
 
 logging.basicConfig(level=logging.INFO)
 
-# First, read the contents file into memory, then parse it into json.
+# First, read the contents.json file into memory, then parse it.
 with open("contents.json") as f:
     contents_str = f.read()
     contents = json.loads(contents_str)
@@ -31,7 +30,7 @@ for content in contents.values():
 
 
 # For the sake of runtime and reproducibility let's just download the
-# first 10 links. You can reduce this if you want.
+# first 50 links. You can reduce this if you want.
 LIMIT = 50
 
 
@@ -60,6 +59,6 @@ for png in png_links[:LIMIT]:
         contents = r.read()
 
         if imghdr.what(None, h=contents) != "png":
-            logging.info("Image not a PNG; not saving.")
+            logging.info("Image is not a PNG; not saving.")
         else:
             f.write(contents)
