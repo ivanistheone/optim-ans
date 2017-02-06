@@ -9,6 +9,8 @@ import json
 import tempfile
 import urllib.request
 
+import magic
+
 
 logging.basicConfig(level=logging.INFO)
 
@@ -38,10 +40,15 @@ logging.info("Downloading mp4 links.")
 for mp4 in mp4_links[:LIMIT]:
     logging.info("Downloading {}".format(mp4))
     r = urllib.request.urlopen(mp4)
-    # Let's not save the file to avoid cluttering our filesystem.
 
-    # What's a fast and succinct way of detecting whether what we downloaded
-    # was an MP4 file?
+    video_header = r.read(1024)
+    # Save downloaded file only if it is an MP4 file (determine based on header)
+    with tempfile.NamedTemporaryFile(suffix=".mp4", delete=False) as vf:
+        if magic.from_buffer(video_header, mime=True) != "video/mp4":
+            logging.info("File is not an MP4; not saving.")
+        else:
+            rest_of_video = r.read()
+            vf.write(video_header + rest_of_video)
 
 
 # Now, download each png link.

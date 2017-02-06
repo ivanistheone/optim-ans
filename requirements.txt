@@ -1,1 +1,2 @@
 Pympler==0.4.3
+python-magic==0.4.12
