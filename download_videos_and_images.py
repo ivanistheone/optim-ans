@@ -14,8 +14,7 @@ logging.basicConfig(level=logging.INFO)
 
 # First, read the contents.json file into memory, then parse it.
 with open("contents.json") as f:
-    contents_str = f.read()
-    contents = json.loads(contents_str)
+    contents = json.load(f)
 
 
 # Then, loop over each content, and get its mp4 and png values.
